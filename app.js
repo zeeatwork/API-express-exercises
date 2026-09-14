@@ -38,7 +38,7 @@ app.get('/queryViewer', (req, res) => {
      return res.status(400).send('Please provide a race');
    }
    const greeting =  `Greetings ${name} the ${race}, welcome to our kingdom. `;
-   res.send(greeting);
+   res.type('text/plain').send(greeting);
   })
 
  app.get('/sum', (req, res) => {
@@ -78,7 +78,7 @@ if(!shift) {
 }
 const numberShift = parseFloat(shift);
 if(Number.isNaN(numberShift)) {
-  return res.status(400).send('shift must be a number.'))
+  return res.status(400).send('shift must be a number.')
 }
 })
 
